@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📝 Kanban Board Web App
 
 A **modular, dynamic Kanban Board** built with **Vanilla JavaScript, HTML, and CSS**, featuring **create, edit, delete, drag & drop, search, sort, and persistent storage**. Perfect for task management or productivity apps.
@@ -163,3 +164,7 @@ GitHub: [zisan77z](https://github.com/zisan77z)
 
 ```
 
+=======
+# kanban-board
+A fully functional Kanban Board web application with drag &amp; drop, add, edit, delete, search, and persistent storage using localStorage
+>>>>>>> 53cd1b64c512027b1ce945ba7b8c0a9e19a8a52a
