@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h2 class="logo">Kanban Board</h2>
+    <div class="header-controls">
+      <input type="text" class="search-box" placeholder="Search tasks...">
+      <button class="add-task-btn">＋ Add Task</button>
+       <button class="sort-cards-btn">⇅ Sort Cards</button>
+    </div>
+  </header>
+
+  <!-- Modal for Adding Task -->
+  <div class="modal hidden">
+    <div class="modal-content">
+      <h3>Add Task</h3>
+      <input type="text" class="modal-input" placeholder="Task title..." />
+      <div class="modal-buttons">
+        <button class="modal-add">Add</button>
+        <button class="modal-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Modal -->
+  <div class="delete-modal hidden">
+    <div class="delete-content">
+      <p>Do you want to delete?</p>
+      <p class="delete-item-name"></p>
+      <div class="delete-buttons">
+        <button class="no">No</button>
+        <button class="yes">Yes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Board -->
+  <main class="board">
+
+    <div class="column" data-column="todo">
+      <h3>Todo</h3>
+      <button class="add-card-btn" data-column="todo">＋ Add Card</button>
+      <div class="card-container"></div>
+    </div>
+
+    <div class="column" data-column="progress">
+      <h3>In Progress</h3>
+      <button class="add-card-btn" data-column="progress">＋ Add Card</button>
+      <div class="card-container"></div>
+    </div>
+
+    <div class="column" data-column="done">
+      <h3>Completed</h3>
+      <button class="add-card-btn" data-column="done">＋ Add Card</button>
+      <div class="card-container"></div>
+    </div>
+
+  </main>
+
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>

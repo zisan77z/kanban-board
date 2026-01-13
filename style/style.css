@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #1e1e1e;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: #292929;
+  border-bottom: 1px solid #444;
+}
+
+.logo {
+  font-size: 22px;
+}
+
+.header-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.search-box {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  width: 180px;
+}
+
+.add-task-btn {
+  padding: 6px 12px;
+  background: #3498db;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Board */
+.board {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  height: calc(100vh - 70px);
+}
+
+.column {
+  width: 32%;
+  background: #2c2c2c;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.column h3 {
+  margin-bottom: 10px;
+}
+
+.add-card-btn {
+  padding: 6px 10px;
+  background: #555;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.card-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Card */
+.card {
+  background: #3a3a3a;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: grab;
+  position: relative;
+  transition: 0.2s;
+}
+
+.card:hover {
+  background: #4a4a4a;
+}
+
+.card .delete-btn {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #f88;
+}
+
+/* Modal */
+.modal,
+.delete-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content,
+.delete-content {
+  background: #2d2d2d;
+  padding: 20px 25px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 14px;
+  border: none;
+  border-radius: 4px;
+}
+
+.modal-buttons button,
+.delete-buttons button {
+  padding: 6px 12px;
+  border: none;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.sort-cards-btn {
+  padding: 6px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.sort-cards-btn:hover {
+  background-color: #45a049;
+}
+
+.header-title-box {
+  transition: all 0.3s ease; /* smooth for opacity, transform, height */
+}
+
+.header-title-box.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+
+/* Card container (each card) */
+.header-title-box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  cursor: grab;
+  transition: all 0.3s ease; /* fade/scale animations */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 1;
+}
+
+/* Dragging effect */
+.header-title-box.dragging {
+  opacity: 0.6;
+  transform: scale(0.98);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Title text */
+.header-title-box .title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  word-break: break-word;
+  flex: 1; /* take remaining space */
+}
+
+/* Delete button */
+.header-title-box .card-delete-button {
+  background-color: #ff4d4f;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.header-title-box .card-delete-button:hover {
+  background-color: #d9363e;
+}
+
+/* Hidden class (for search/filter) */
+.header-title-box.hidden {
+  display: none;
+  opacity: 0;
+}
+
+/* Optional: smooth fade-in when adding new card */
+.header-title-box {
+  opacity: 0;
+  transform: translateY(-5px);
+  animation: fadeInCard 0.2s forwards;
+}
+
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
